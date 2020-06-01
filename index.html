@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Quicksand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+        <title>dari.</title>
+    </head>
+    <body>
+        <div>
+            <nav class="nav">
+                <div id="navbar">
+                    <div id="navbar-left">
+                        <a class="effect" href="#contact">Contact</a>
+                        <a class="effect" href="#filler">Filler</a>
+                    </div>
+                    <div id="navbar-center">
+                        <a href="#default" id="logo">dari.</a>
+                    </div>
+                    <div id="navbar-right">
+                        <a class="effect" href="#about">About</a>
+                        <a class="effect" href="#projects">Projects</a>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <div class="container">
+                    <div class="lead">
+                        <div class="description">
+                            <h1>Hey!</h1>
+                            <p>I'm Dari Acuña, a college student reading Engineering Physics in UNI. I'm a self-demanding autodidact and a CS
+                                enthusiast.
+                            </p>
+                            <div class="github"></div>
+                        </div>
+                        <div class="pic">
+                            <img src="./pic.jpeg" class="avatar" alt="Dari">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container-front-page">
+                    <section class="section">
+                        <h2><a id="about"></a>About Me</h2>
+                        <section>
+                            <p>
+                                I'm currently on my second semester of my second year reading Engineering Physics and I was recently accepted into student group GREIC.
+                                Yes, I do have liking for Physics but I also have an inclination for Computer Science as a whole.
+                                As of right now I'm working part-time remotely as a transcriptor because, well, money.
+                                You can probably already tell I have terribly writing skills.
+
+                                Also, I speak fluent English.
+                            </p>
+                        </section>
+                    </section>
+                    <section class="section">
+                        <h2><a id="projects"></a>(Finished) Projects</h2>
+                        <section>
+                            <p>Wow, such empty!</p>
+                        </section>
+                    </section>
+                    <section class="section">
+                        <h2><a id="filler"></a>Filler</h2>
+                        <section>
+                            <p>
+                                I might have procrastinated all week and done this today.
+                            </p>
+                        </section>
+                    </section>
+                    <section class="section">
+                        <h2><a id="contact"></a>Contact Me</h2>
+                        <section>
+                            <p>
+                                dacunaq@uni.pe
+                            </p>
+                        </section>
+                    </section>
+                </div>
+                <div class="container-footer">
+                    <footer class="footer">
+                        <div>
+                            <p>No Copyright</p>
+                        </div>
+                    </footer> 
+                </div>     
+            </main>  
+        </div>
+        <script>
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                    document.getElementById("navbar").style.padding = "30px 10px";
+                    document.getElementById("logo").style.fontSize = "25px";
+                } else {
+                    document.getElementById("navbar").style.padding = "80px 10px";
+                    document.getElementById("logo").style.fontSize = "35px";
+                }
+            }
+        </script>
+    </body>
+</html>
