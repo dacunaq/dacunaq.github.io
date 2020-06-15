@@ -1,0 +1,127 @@
+body {
+    background-color: gray;
+    color: white;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
+    display: flex;  
+    flex-direction: column;
+}
+
+.black {
+    display: grid;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+
+    justify-items: stretch;
+    align-items: stretch;
+
+    justify-content: stretch;
+    align-content: stretch;
+
+    background-color: black;
+    min-height: 400px;
+
+    border-radius: 100%;
+}
+
+.yellow {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+    border-radius: 100% 5px 0px 5px;
+
+    background: yellow;
+}
+
+.yellow.light {
+    background: #e056fd;
+}
+
+.blue {
+    grid-row: 1 / span 2;
+    grid-column: 3 / span 2;
+    border-radius: 5px 100% 5px 0px;
+
+    background: blue;
+}
+
+.blue.light {
+    background: #7ed6df;
+}
+
+.red {
+    grid-row: 3 / span 2;
+    grid-column: 1 / span 2;
+    border-radius: 5px 0px 5px 100%;
+
+    background: red;
+}
+
+.red.light {
+    background: #ffbe76;
+}
+
+.green {
+    grid-row: 3 / span 2;
+    grid-column: 3 / span 2;
+    border-radius: 0px 5px 100% 5px;
+
+    background: green;
+}
+
+.green.light {
+    background: #badc58;
+}
+
+.start {
+    display: grid;
+
+    grid-row: 2 / span 2;
+    grid-column:  2/ span 2;
+    border-radius: 100%;
+
+    background-color: black;
+}
+
+.button {
+    background-color: gray;
+    margin: 15px;
+    border-radius: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    overflow-wrap: break-word;
+}
+
+.main-content {
+    top: 149px;
+    bottom: 0; 
+    width: 100%; 
+    position: fixed; 
+    overflow: scroll;
+}
+
+footer {
+    background-color: #424242;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
