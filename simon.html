@@ -3,162 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="simoncss.css">
     <title>Document</title>
 </head>
 <body>
     <div>
-        <nav class="nav">
-
-        </nav>
         <main class="main-content">
             <div class="container">
                 <div class="black">
-                    <div class="yellow" id="yellow"></div>
-                    <div class="blue" id="blue"></div>
-                    <div class="red" id="red"></div>
-                    <div class="green" id="green"></div>
-                    <div class="button" id="button">
-                        <button class="button" id="button">
+                    <div class="color yellow" id="yellow"></div>
+                    <div class="color blue" id="blue"></div>
+                    <div class="color red" id="red"></div>
+                    <div class="color green" id="green"></div>
+                    <div class="center" id="center">
+                        <button class="button" id="button" onclick="beginGame()">
                             <p>Start</p>
                         </button>
                     </div>
+                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                    <script src="javascript.js"></script>
                 </div>
             </div>
-            <div class="container-footer">
-                <footer class="footer">
-                    <div>
-                        <p>No Copyright</p>
-                    </div>
-                </footer> 
-            </div>     
         </main>
     </div>  
-    <script>
-        const yellow = document.getElementById('yellow')
-        const blue = document.getElementById('blue')
-        const red = document.getElementById('red')
-        const green = document.getElementById('green')
-        const button = document.getElementById('button')
-        const LAST_LEVEL = 10
-
-        class Game {
-            constructor() {
-                this.init()
-                this.startSequence()
-                setTimeout(this.nextLvl, 500)
-            }
-            init() {
-                this.toggleBtnStart()
-                this.level = 1
-                this.colors = {
-                    0: yellow,
-                    1: blue,
-                    2: red,
-                    3: green,
-                }
-                this.colorsCode = {
-                    yellow: 0,
-                    blue: 1,
-                    red: 2,
-                    green: 3,
-                }
-                // We use bind(this) in order to don't lose the reference
-                // to the game class, so now, when we pass
-                // "this.chooseColor" as parameter in the "addEventListener"
-                // method, it doesn't point to the class which fired the
-                // event, but to the game class.
-                this.chooseColor = this.chooseColor.bind(this)
-                this.nextLvl = this.nextLvl.bind(this)
-                this.init = this.init.bind(this)
-            }
-            toggleBtnStart(){
-                const status = button.classList.contains('hide')
-                if (status){
-                    button.classList.remove('hide')
-                }
-                else{
-                    button.classList.add('hide')
-                }
-            }
-            startSequence() {
-                this.sequence = new Array(LAST_LEVEL)
-                    .fill(0)
-                    .map((n) => Math.floor(Math.random() * 4))
-            }
-            nextLvl() {
-                this.sublvl = 0
-                this.lightSequence()
-                this.addClickEvent()
-            }
-            lightColor(numberColor) {
-                this.colors[numberColor].classList.add('light')
-                setTimeout(() => this.turnOffColor(numberColor), 350)
-            }
-            turnOffColor(numberColor) {
-                this.colors[numberColor].classList.remove('light')
-            }
-            lightSequence() {
-                for (let i = 0; i < this.level; i++) {
-                    setTimeout(
-                        () => this.lightColor(this.sequence[i]),
-                        1000 * i
-                    )
-                }
-            }
-            addClickEvent() {
-                for (let i = 0; i < 4; i++) {
-                    this.colors[i].addEventListener(
-                        'click',
-                        this.chooseColor
-                    )
-                }
-            }
-            deleteClickEvent() {
-                for (let i = 0; i < 4; i++) {
-                    this.colors[i].removeEventListener(
-                        'click',
-                        this.chooseColor
-                    )
-                }
-            }
-            chooseColor(evt) {
-                // In this context, "this" represent the class that
-                // causes the event to fire. So, in order to don't lose
-                // reference to the class game, we have to use "bind(this)".
-                // console.log(this)
-
-                const color = evt.target.dataset.color
-                const colorCode = this.colorsCode[color]
-                this.lightColor(colorCode)
-                if (colorCode === this.sequence[this.sublvl]) {
-                    this.sublvl++
-                    if (this.sublvl === this.level) {
-                        this.level++
-                        this.deleteClickEvent()
-                        if (this.level === LAST_LEVEL + 1) {
-                            this.win()
-                        } else {
-                            setTimeout(this.nextLvl, 1000)
-                        }
-                    }
-                } else {
-                    this.lose()
-                }
-            }
-            win() {
-                swal('Simon says', 'You win!', 'success').then(this.init)
-            }
-            lose() {
-                swal('Simon says', 'You lose!', 'error').then(() => {
-                    this.deleteClickEvent()
-                    this.init()
-                })
-            }
-        }
-        function beginGame() {
-            window.game = new Game()
-        }
-    </script>
 </body>
 </html>

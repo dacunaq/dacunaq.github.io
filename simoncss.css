@@ -1,11 +1,17 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-color: gray;
+    background-color: #CBDDDA;
     color: white;
     margin: 0;
     font-family: 'Manrope', sans-serif;
     text-align: center;
     display: flex;  
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .black {
@@ -22,8 +28,14 @@ body {
     justify-content: stretch;
     align-content: stretch;
 
-    background-color: black;
-    min-height: 400px;
+    background-color: #5A5A5A;
+
+    height: 80vh;
+    max-height: 80vw;
+    width: 80vw;
+    max-width: 80vh;
+
+    margin: 0 auto;
 
     border-radius: 100%;
 }
@@ -33,11 +45,11 @@ body {
     grid-column: 1 / span 2;
     border-radius: 100% 5px 0px 5px;
 
-    background: yellow;
+    background: #FFF44D;
 }
 
 .yellow.light {
-    background: #e056fd;
+    background: #FEFAAD;
 }
 
 .blue {
@@ -45,11 +57,11 @@ body {
     grid-column: 3 / span 2;
     border-radius: 5px 100% 5px 0px;
 
-    background: blue;
+    background: #248CFF;
 }
 
 .blue.light {
-    background: #7ed6df;
+    background: #94C7FF;
 }
 
 .red {
@@ -57,11 +69,11 @@ body {
     grid-column: 1 / span 2;
     border-radius: 5px 0px 5px 100%;
 
-    background: red;
+    background: #FF4242;
 }
 
 .red.light {
-    background: #ffbe76;
+    background: #FF7A7A;
 }
 
 .green {
@@ -69,57 +81,49 @@ body {
     grid-column: 3 / span 2;
     border-radius: 0px 5px 100% 5px;
 
-    background: green;
+    background: #4EC165;
 }
 
 .green.light {
-    background: #badc58;
+    background: #81C68F;
 }
 
-.start {
-    display: grid;
+.color {
+    transition-duration: 0.2s;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
 
     grid-row: 2 / span 2;
-    grid-column:  2/ span 2;
+    grid-column:  2 / span 2;
     border-radius: 100%;
 
-    background-color: black;
+    background-color: #5A5A5A;
 }
 
 .button {
-    background-color: gray;
-    margin: 15px;
+    background-color: #C4C4C4;
+    width: 90%;
+    height: 90%;
     border-radius: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-    overflow-wrap: break-word;
+    margin: auto;
+    min-width: 100px;
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
 }
 
 .main-content {
-    top: 149px;
-    bottom: 0; 
-    width: 100%; 
-    position: fixed; 
-    overflow: scroll;
-}
-
-footer {
-    background-color: #424242;
+    height: 100%;
     width: 100%;
-    margin-top: 100px;
-    text-align: center;
-    justify-content: center;
+    display: table;
 }
 
 .hide {
